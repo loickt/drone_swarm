@@ -1,0 +1,17 @@
+drone 0     x : 0.0       y : 3.0
+drone 1     x : 2.12      y : 2.12
+drone 2     x : 3.0       y : 0.0
+drone 3     x : 2.12      y : -2.12
+drone 4     x : 0.0       y : -3.0
+drone 5     x : -2.12     y : -2.12
+drone 6     x : -3.0      y : 0.0
+drone 7     x : -2.12     y : 2.12
+drone 8     x : 0.0       y : 6.0
+drone 9     x : 0.0       y : 5.12
+drone 10     x : 0.0       y : 3.0
+drone 11     x : 0.0       y : 0.88
+drone 12     x : 0.0       y : 0.0
+drone 13     x : 0.0       y : 0.88
+drone 14     x : 0.0       y : 3.0
+drone 15     x : 0.0       y : 5.12
+

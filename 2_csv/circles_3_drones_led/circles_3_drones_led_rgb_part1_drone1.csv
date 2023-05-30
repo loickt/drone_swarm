@@ -1,0 +1,4 @@
+Step,Id,Command,X-R-L,Y-G,Z-B,Yaw-Intensity,Duration
+0,1,Ring,0,255,0,1,0
+96,1,Ring,0,0,255,1,0
+192,1,Ring,0,255,0,1,0
