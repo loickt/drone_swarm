@@ -12,7 +12,7 @@ def concat_files(folder):
         df=pd.concat([df,pd.read_csv("../2_csv/"+folder+"/"+files[i])])
     return df
 
-def tri_csv(df):
+def sort_csv(df):
     #definition of the sorting order, then order
     df_mapping = pd.DataFrame({'Command': ['Ring', 'Headlight','Takeoff', 'Goto','Land','Wait'],})
     sort_mapping = df_mapping.reset_index().set_index('Command')
@@ -198,14 +198,14 @@ def prepare_csv(folder):
     nb_drones=df_concat['Id'].max()+1
     print("nbdrone="+str(nb_drones))
     if nb_drones>1:
-        print("Distances sur csv de base >= "+str(int(float(distance_calculation(df=df_concat,mode='w',folder=folder))*100))+"cm")
-    df_ajouts=takeoff_land(df_concat,folder=folder)
-    df_ajouts_interpollés = transition(df_concat)
-    if nb_drones>1 and df_ajouts_interpollés.shape[0]>0:        
-        print("Distances sur csv de transition >= "+str(int(float(distance_calculation(df=df_ajouts_interpollés,mode='w',folder=folder))*100))+"cm")
-    df_concat_1=pd.concat([df_ajouts,df_concat])
+        print("Distances on first generated CSVs >= "+str(int(float(distance_calculation(df=df_concat,mode='w',folder=folder))*100))+"cm")
+    df_adds=takeoff_land(df_concat,folder=folder)
+    df_interpolated_adds = transition(df_concat)
+    if nb_drones>1 and df_interpolated_adds.shape[0]>0:        
+        print("Distances on transition interpolated CSVs >= "+str(int(float(distance_calculation(df=df_interpolated_adds,mode='w',folder=folder))*100))+"cm")
+    df_concat_1=pd.concat([df_adds,df_concat])
     df_concat_2=df_concat_1
-    df_concat_2=pd.concat([df_concat_1,df_ajouts_interpollés])
-    df_endal=tri_csv(df_concat_2)
+    df_concat_2=pd.concat([df_concat_1,df_interpolated_adds])
+    df_final=sort_csv(df_concat_2)
     
-    df_endal.to_csv("../3_outputCSV/"+folder+"/"+folder+".csv",index=False)
+    df_final.to_csv("../3_outputCSV/"+folder+"/"+folder+".csv",index=False)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""csvBuilder.py: This code creates a csv file modeling a drone warm flight"""
+"""csvBuilder.py: This code creates a csv file modeling a drone swarm flight"""
 
 __author__      = "Loïck Toupin"
 
