@@ -17,3 +17,6 @@ change str to format
 ctrl f 24
 
 simple fixed goto
+
+some interferences may occure due to the usb rf antenna directly plugged into the pc.
+here they use a 3m cable https://www.youtube.com/watch?v=g92GboiOkeQ
